@@ -48,15 +48,14 @@ const gameEnd = ref(false)
 const list = ref(null)
 const countdown = ref(60)
 const currentType = ref(undefined) // User input
+const result = ref({
+  correct: 0,
+  wrong: 0
+})
+
 let currentWord;
 let timer;
 let startState = false
-const result = ref({
-  correct: 0,
-  wrong: 0,
-  total: 0,
-  accuracy: 0,
-})
 
 const start = () => {
   if (startState) return
@@ -85,25 +84,21 @@ const restart = () => {
   gameEnd.value = false
   result.value = {
     correct: 0,
-    wrong: 0,
-    total: 0,
-    accuracy: 0,
+    wrong: 0
   }
 }
 
 const skipWord = (word, state) => {
 
   if (!list.value.length) return
-
+  
   let index = getIndex()
-
   if (currentType.value.trimEnd() !== currentWord.text) {
     currentWord.typedState = false
     result.value.wrong++
   } else {
     result.value.correct++
   }
-
   // If this is the last word in the list then reload the list
   if (!list.value[index + 1]) {
     createList()
