@@ -29,7 +29,7 @@
     autofocus>
 
     <!-- Restart Button -->
-    <button @click="restart" > <img class="opacity-90" src="retry.svg" alt=""> </button>
+    <button @click="restart" > <img class="opacity-90" src="../public/retry.svg" alt=""> </button>
 
     <!-- Score Table -->
     <div v-if="gameEnd" class="w-[35%] flex items-center justify-center absolute bottom-10 bg-gray-200 bg-opacity-50 rounded shadow" >
