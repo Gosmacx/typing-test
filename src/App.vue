@@ -23,7 +23,7 @@
     v-model="currentType" 
     @input="start" 
     @keyup.space="skipWord" 
-    class="w-[35%] h-12 rounded bg-gray-200 bg-opacity-50 shadow p-3 outline-none focus-within:shadow-black" 
+    class="w-[35%] h-12 rounded bg-gray-200 bg-opacity-50 shadow p-3 outline-none focus-within:shadow-black transition-all" 
     placeholder="Type Here" 
     type="text"
     autofocus>
